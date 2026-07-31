@@ -1,0 +1,84 @@
+:root {
+
+
+
+    --color-primary: #2563eb;
+
+    --color-success: #16a34a;
+
+    --color-danger: #dc2626;
+
+    --color-warning: #f59e0b;
+
+    --color-info: #0ea5e9;
+
+    --color-white: #ffffff;
+
+    --color-black: #111827;
+
+    --color-gray-100: #f9fafb;
+
+    --color-gray-200: #e5e7eb;
+
+    --color-gray-300: #d1d5db;
+
+    --color-gray-500: #6b7280;
+
+
+/* ===========================
+   Alert Colors
+=========================== */
+
+--color-success-bg: #dcfce7;
+--color-success-text: #166534;
+--color-success-border: #86efac;
+
+--color-error-bg: #fee2e2;
+--color-error-text: #991b1b;
+--color-error-border: #fca5a5;
+
+--color-warning-bg: #fef3c7;
+--color-warning-text: #92400e;
+--color-warning-border: #fcd34d;
+
+--color-info-bg: #dbeafe;
+--color-info-text: #1e40af;
+--color-info-border: #93c5fd;
+
+    --radius-sm: 4px;
+
+    --radius-md: 6px;
+
+    --radius-lg: 10px;
+
+
+
+    --space-xs: 4px;
+
+    --space-sm: 8px;
+
+    --space-md: 16px;
+
+    --space-lg: 24px;
+
+    --space-xl: 32px;
+
+
+
+    --text-sm: 14px;
+
+    --text-md: 16px;
+
+    --text-lg: 20px;
+
+    --text-xl: 28px;
+
+    --text-2xl: 36px;
+
+
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.1);
+
+    --shadow-md: 0 4px 8px rgba(0,0,0,.15);
+
+}

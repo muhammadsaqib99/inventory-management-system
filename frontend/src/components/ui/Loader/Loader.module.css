@@ -1,0 +1,11 @@
+.loader {
+
+    padding: var(--space-md);
+
+    font-size: var(--text-md);
+
+    color: var(--color-primary);
+
+    font-weight: bold;
+
+}

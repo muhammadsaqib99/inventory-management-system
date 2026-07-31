@@ -1,0 +1,23 @@
+.container {
+
+    margin-bottom: var(--space-xl);
+
+}
+
+.title {
+
+    font-size: var(--text-2xl);
+
+    color: var(--color-black);
+
+    margin-bottom: var(--space-sm);
+
+}
+
+.subtitle {
+
+    color: var(--color-gray-500);
+
+    font-size: var(--text-md);
+
+}
