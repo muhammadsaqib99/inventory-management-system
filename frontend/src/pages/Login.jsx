@@ -13,7 +13,8 @@ import Card from "../components/ui/Card";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 
-import { setRefreshToken } from "../utils/storage";
+import styles from "./Login.module.css";
+
 
 function Login() {
 
@@ -22,20 +23,16 @@ function Login() {
     const { login } = useAuth();
 
     const {
-
         values,
-
         handleChange,
-
         resetForm
-
     } = useForm({
 
         username: "",
-
         password: ""
 
     });
+
 
     async function handleLogin(e) {
 
@@ -46,16 +43,14 @@ function Login() {
             const data = await loginService(
 
                 values.username,
-
                 values.password
 
             );
 
-            // Save Access Token in Context
-            login(data.access);
-
-            // Save Refresh Token
-            setRefreshToken(data.refresh);
+            login(
+                data.access,
+                data.refresh
+            );
 
             alert(MESSAGES.LOGIN_SUCCESS);
 
@@ -75,72 +70,74 @@ function Login() {
 
     }
 
+
     return (
 
-        <>
+        <div className={styles.loginPage}>
 
             <PageTitle
-
                 title="Login"
-
                 subtitle="Sign in to continue"
-
             />
 
-            <Card>
 
-                <form onSubmit={handleLogin}>
+            <div className={styles.formWrapper}>
 
-                    <Input
+                <Card header="Account Login">
 
-                        type="text"
+                    <form onSubmit={handleLogin}>
 
-                        name="username"
+                        <Input
 
-                        placeholder="Enter Username"
+                            label="Username"
 
-                        value={values.username}
+                            type="text"
 
-                        onChange={handleChange}
+                            name="username"
 
-                    />
+                            placeholder="Enter username"
 
-                    <br /><br />
+                            value={values.username}
 
-                    <Input
+                            onChange={handleChange}
 
-                        type="password"
+                        />
 
-                        name="password"
 
-                        placeholder="Enter Password"
+                        <Input
 
-                        value={values.password}
+                            label="Password"
 
-                        onChange={handleChange}
+                            type="password"
 
-                    />
+                            name="password"
 
-                    <br /><br />
+                            placeholder="Enter password"
 
-                    <Button
+                            value={values.password}
 
-                        type="submit"
+                            onChange={handleChange}
 
-                    >
+                        />
 
-                        Login
 
-                    </Button>
+                        <Button
+                            type="submit"
+                        >
+                            Login
+                        </Button>
 
-                </form>
+                    </form>
 
-            </Card>
+                </Card>
 
-        </>
+            </div>
+
+        </div>
 
     );
 
 }
+
 
 export default Login;

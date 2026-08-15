@@ -1,13 +1,23 @@
 import { Routes, Route } from "react-router-dom";
-import Teachers from "./pages/Teachers";
-import Students from "./pages/Students";
+
 import MainLayout from "./layouts/MainLayout";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+
+import Categories from "./pages/categories/Categories";
+import Products from "./pages/products/Products";
+import Suppliers from "./pages/suppliers/Suppliers";
+import Transactions from "./pages/transactions/Transactions";
+
 import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+
 import { ROUTES } from "./constants/routes";
+
 
 function App() {
 
@@ -17,75 +27,97 @@ function App() {
 
             <Route element={<MainLayout />}>
 
-                <Route
+           
 
+                <Route
                     path={ROUTES.HOME}
-
                     element={<Home />}
-
                 />
 
-                <Route
 
+                
+
+                <Route
                     path={ROUTES.LOGIN}
-
-                    element={<Login />}
-
+                    element={
+                        <PublicRoute>
+                            <Login />
+                        </PublicRoute>
+                    }
                 />
 
+
+               
+
                 <Route
-
-                    path={ROUTES.DASHBOARD}
-
+                    path={ROUTES.REGISTER}
                     element={
-
-                        <ProtectedRoute>
-
-                            <Dashboard />
-
-                        </ProtectedRoute>
-
+                        <PublicRoute>
+                            <Register />
+                        </PublicRoute>
                     }
+                />
 
+
+               
+
+                <Route
+                    path={ROUTES.DASHBOARD}
+                    element={
+                        <ProtectedRoute>
+                            <Dashboard />
+                        </ProtectedRoute>
+                    }
+                />
+
+
+                <Route
+                    path={ROUTES.CATEGORIES}
+                    element={
+                        <ProtectedRoute>
+                            <Categories />
+                        </ProtectedRoute>
+                    }
+                />
+
+
+                <Route
+                    path={ROUTES.PRODUCTS}
+                    element={
+                        <ProtectedRoute>
+                            <Products />
+                        </ProtectedRoute>
+                    }
+                />
+
+
+                <Route
+                    path={ROUTES.SUPPLIERS}
+                    element={
+                        <ProtectedRoute>
+                            <Suppliers />
+                        </ProtectedRoute>
+                    }
+                />
+
+
+                <Route
+                    path={ROUTES.TRANSACTIONS}
+                    element={
+                        <ProtectedRoute>
+                            <Transactions />
+                        </ProtectedRoute>
+                    }
                 />
 
             </Route>
 
-            <Route
 
-                 path={ROUTES.STUDENT}
-        
-                 element={
-
-                     <ProtectedRoute>
-
-                         <Students />
-
-                     </ProtectedRoute>
-
-                 }
-
-            />
+            
 
             <Route
-
-                            path="/teachers"
-
-                                element={
-                    
-                                            <Teachers />
-                                   }
-
-                />
-
-
-
-            <Route
-
                 path="*"
-
                 element={<NotFound />}
-
             />
 
         </Routes>
@@ -93,5 +125,6 @@ function App() {
     );
 
 }
+
 
 export default App;

@@ -1,0 +1,9 @@
+.loginPage {
+    width: 100%;
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}

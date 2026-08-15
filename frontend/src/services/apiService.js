@@ -1,11 +1,9 @@
 import api from "../axios/axios";
-import { API_ENDPOINTS } from "../constants/apiEndpoints";
 
-// Test Protected API
-export async function testProtectedAPI() {
 
-    const response = api.get(API_ENDPOINTS.STUDENTS);
+// Generic API instance
+// All authentication and token handling
+// is already managed by axios.js.
 
-    return response.data;
+export default api;
 
-}

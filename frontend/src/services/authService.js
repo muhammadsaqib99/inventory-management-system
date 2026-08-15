@@ -46,3 +46,18 @@ export async function refreshToken(refresh) {
     return response.data;
 
 }
+
+// Register User
+export async function register(username, email, password) {
+
+    const response = await api.post(
+        API_ENDPOINTS.REGISTER,
+        {
+            username,
+            email,
+            password
+        }
+    );
+
+    return response.data;
+}

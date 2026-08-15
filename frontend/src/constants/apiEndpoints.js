@@ -1,11 +1,28 @@
+
 export const API_ENDPOINTS = {
 
-    LOGIN: "/token/",
+    // ===========================
+    // Authentication
+    // ===========================
 
-    REFRESH: "/token/refresh/",
+    LOGIN: "/api/token/",
 
-    STUDENTS: "/student/",
+    REFRESH: "/api/token/refresh/",
 
-    TEACHERS: "/teacher/",
+    REGISTER: "/api/register/",
+
+
+    // ===========================
+    // Inventory
+    // ===========================
+
+    CATEGORIES: "/api/categories/",
+
+    PRODUCTS: "/api/products/",
+
+    SUPPLIERS: "/api/suppliers/",
+
+    TRANSACTIONS: "/api/transactions/",
 
 };
+

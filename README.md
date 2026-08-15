@@ -1,4 +1,4 @@
-# React + Django Starter Template
+# Inventory Management System
 
 A reusable full-stack starter template built with **React**, **Vite**, **Django REST Framework**, and **JWT Authentication**.
 

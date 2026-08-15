@@ -1,98 +1,181 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";
 
 import { ROUTES } from "../../constants/routes";
 
+import styles from "./Navbar.module.css";
+
+
 function Navbar() {
 
     const { token, logout } = useAuth();
 
-    const navigate = useNavigate();
 
     function handleLogout() {
 
         logout();
 
-        navigate(ROUTES.LOGIN);
+    }
+
+
+    function getLinkClass({ isActive }) {
+
+        return isActive
+
+            ? `${styles.link} ${styles.active}`
+
+            : styles.link;
 
     }
 
+
     return (
 
-        <nav
+        <nav className={styles.navbar}>
 
-            style={{
+            <div className={styles.container}>
 
-                display: "flex",
+                {/* Brand */}
 
-                justifyContent: "space-between",
+                <NavLink
 
-                alignItems: "center",
+                    to={ROUTES.HOME}
 
-                padding: "15px",
+                    className={styles.brand}
 
-                background: "#f4f4f4",
+                >
 
-                marginBottom: "20px"
+                    Inventory System
 
-            }}
+                </NavLink>
 
+
+                {/* Navigation */}
+
+                <div className={styles.links}>
+
+                    <NavLink
+
+                        to={ROUTES.HOME}
+
+                        className={getLinkClass}
+
+                    >
+
+                        Home
+
+                    </NavLink>
+
+
+                    {token && (
+
+                        <>
+
+                            <NavLink
+
+                                to={ROUTES.DASHBOARD}
+
+                                className={getLinkClass}
+
+                            >
+
+                                Dashboard
+
+                            </NavLink>
+
+
+                            <NavLink
+
+                                to={ROUTES.PRODUCTS}
+
+                                className={getLinkClass}
+
+                            >
+
+                                Products
+
+                            </NavLink>
+
+
+                            <NavLink
+
+                                to={ROUTES.CATEGORIES}
+
+                                className={getLinkClass}
+
+                            >
+
+                                Categories
+
+                            </NavLink>
+
+
+                            <NavLink
+
+                                to={ROUTES.SUPPLIERS}
+
+                                className={getLinkClass}
+
+                            >
+
+                                Suppliers
+
+                            </NavLink>
+
+
+                            <NavLink
+
+                                to={ROUTES.TRANSACTIONS}
+
+                                className={getLinkClass}
+
+                            >
+
+                                Transactions
+
+                            </NavLink>
+
+
+                            <button
+
+                                type="button"
+
+                                onClick={handleLogout}
+
+                                className={styles.logout}
+
+                            >
+
+                                Logout
+
+                            </button>
+
+                        </>
+
+                    )}
+
+
+                    {!token && (
+    <>
+        <NavLink
+            to={ROUTES.LOGIN}
+            className={getLinkClass}
         >
+            Login
+        </NavLink>
 
-            <div
+        <NavLink
+            to={ROUTES.REGISTER}
+            className={getLinkClass}
+        >
+            Register
+        </NavLink>
+    </>
+)}
 
-                style={{
 
-                    display: "flex",
-
-                    gap: "20px"
-
-                }}
-
-            >
-
-                <Link to={ROUTES.HOME}>
-
-                    Home
-
-                </Link>
-
-                {
-
-                    token &&
-
-                    <Link to={ROUTES.DASHBOARD}>
-
-                        Dashboard
-
-                    </Link>
-
-                }
-
-            </div>
-
-            <div>
-
-                {
-
-                    token ?
-
-                    <button onClick={handleLogout}>
-
-                        Logout
-
-                    </button>
-
-                    :
-
-                    <Link to={ROUTES.LOGIN}>
-
-                        Login
-
-                    </Link>
-
-                }
+                </div>
 
             </div>
 
@@ -101,5 +184,6 @@ function Navbar() {
     );
 
 }
+
 
 export default Navbar;

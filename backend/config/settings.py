@@ -27,10 +27,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
+    # Third Party Apps
     "rest_framework",
     "django_filters",
      "corsheaders",
+    # Local Apps
+     "accounts",
+    "products",
+    "suppliers",
+    "transactions",
 ]
 
 MIDDLEWARE = [
@@ -84,6 +89,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+         "OPTIONS": {
+            "min_length": 8,
+        },
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -91,6 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+    {
+        "NAME": "accounts.validators.PasswordComplexityValidator",
+    },
+
 ]
 
 
@@ -133,3 +145,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 CORS_ALLOW_ALL_ORIGINS = True
+
+ROOT_URLCONF = "config.urls"
+
+WSGI_APPLICATION = "config.wsgi.application"

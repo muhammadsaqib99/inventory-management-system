@@ -1,0 +1,110 @@
+.search {
+    max-width: 450px;
+}
+
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.table th {
+    text-align: left;
+
+    padding: 14px 12px;
+
+    border-bottom: 2px solid #ddd;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.table td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #eee;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+/* =========================
+   TRANSACTION TYPE
+========================= */
+
+.stockIn {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background: #d1e7dd;
+
+    color: #0f5132;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.stockOut {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background: #f8d7da;
+
+    color: #842029;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   STATES
+========================= */
+
+.empty {
+    padding: 25px 0;
+
+    opacity: 0.7;
+}
+
+.error {
+    padding: 10px 0;
+}

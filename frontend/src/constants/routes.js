@@ -4,8 +4,17 @@ export const ROUTES = {
 
     LOGIN: "/login",
 
+    REGISTER: "/register",
+
     DASHBOARD: "/dashboard",
 
-    "STUDENT": "/student",
+    CATEGORIES: "/categories",
+
+    PRODUCTS: "/products",
+
+    SUPPLIERS: "/suppliers",
+
+    TRANSACTIONS: "/transactions",
 
 };
+

@@ -1,35 +1,36 @@
+
 .card {
-
     background: var(--color-white);
-
     border: 1px solid var(--color-gray-200);
-
     border-radius: var(--radius-lg);
-
-    padding: var(--space-lg);
-
     margin-bottom: var(--space-lg);
-
     box-shadow: var(--shadow-sm);
-
+    overflow: hidden;
 }
 
 .header {
+    padding: var(--space-md) var(--space-lg);
 
-    margin-bottom: var(--space-md);
+    background: linear-gradient(
+        135deg,
+        var(--color-primary),
+        #1d4ed8
+    );
 
+    color: var(--color-white);
+
+    font-size: var(--text-lg);
+    font-weight: 700;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .body {
-
-    margin-bottom: var(--space-md);
-
+    padding: var(--space-lg);
 }
 
 .footer {
-
     border-top: 1px solid var(--color-gray-200);
-
-    padding-top: var(--space-md);
-
+    padding: var(--space-md) var(--space-lg);
 }
+

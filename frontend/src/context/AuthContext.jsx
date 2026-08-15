@@ -1,37 +1,49 @@
+
 import { createContext, useState } from "react";
+
 import {
-
     getAccessToken,
-
     setAccessToken,
-
+    setRefreshToken,
     clearTokens
-
 } from "../utils/storage";
+
 
 export const AuthContext = createContext();
 
+
 function AuthProvider({ children }) {
 
-   const [token, setToken] = useState(getAccessToken);
-   
-    // Login Function
-    function login(accessToken) {
+    const [token, setToken] = useState(getAccessToken());
+
+
+    // ===========================
+    // Login User
+    // ===========================
+
+    function login(accessToken, refreshToken) {
 
         setAccessToken(accessToken);
+
+        setRefreshToken(refreshToken);
 
         setToken(accessToken);
 
     }
 
-    // Logout Function
+
+    // ===========================
+    // Logout User
+    // ===========================
+
     function logout() {
 
-         clearTokens();
+        clearTokens();
 
         setToken(null);
 
     }
+
 
     return (
 
@@ -57,4 +69,6 @@ function AuthProvider({ children }) {
 
 }
 
+
 export default AuthProvider;
+

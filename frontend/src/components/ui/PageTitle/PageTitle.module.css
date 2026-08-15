@@ -1,23 +1,18 @@
+
 .container {
-
     margin-bottom: var(--space-xl);
-
 }
 
 .title {
-
     font-size: var(--text-2xl);
-
-    color: var(--color-black);
-
+    color: var(--color-primary);
     margin-bottom: var(--space-sm);
-
+    font-weight: 700;
 }
 
 .subtitle {
-
     color: var(--color-gray-500);
-
     font-size: var(--text-md);
-
+    margin: 0;
 }
+
